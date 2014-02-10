@@ -37,13 +37,14 @@ describe Pizza do
     end
 
     it 'should add topping to @toppings in Pizza when Pizza.add_topping(topping) is called' do
-      topping = [
-        Topping.new('bell peppers', vegetarian: true)
-      ]
+      topping = Topping.new('bell peppers', vegetarian: true)
 
       pizza = Pizza.new
+      pizza.add_topping(topping)
 
-      expect(pizza.add_topping(topping).include).to eq('bell peppers')
+      # 2 for default topping cheese plus added topping bell peppers
+      expect(pizza.toppings.count).to eq(2)
+      expect(pizza.toppings.last.name).to eq('bell peppers')
     end
   xit 'mark @delivery_time attribute on Pizza for 30 minutes from now (Time.now + 30*60)' do
       pizza = Pizza.new
