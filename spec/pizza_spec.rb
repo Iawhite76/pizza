@@ -28,7 +28,7 @@ describe Pizza do
       toppings = [
         Topping.new('mushrooms', vegetarian: true),
         Topping.new('cheese', vegetarian: true),
-        Topping.new('olives', vegetarian: true),
+        Topping.new('olives', vegetarian: true)
       ]
 
       pizza = Pizza.new(toppings)
