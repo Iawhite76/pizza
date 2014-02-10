@@ -5,7 +5,7 @@ class Pizza
   end
 
   def vegetarian?
-    @toppings.all? { |topping| (topping.vegetarian == true)}
+    @toppings.any? { |topping| (topping.vegetarian == true)}
   end
 end
 
