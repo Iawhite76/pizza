@@ -1,7 +1,13 @@
 class Pizza
-  attr_accessor :toppings
+  attr_accessor :toppings, :delivery_time
   def initialize(toppings=[Topping.new('cheese', vegetarian: true)])
     @toppings = toppings
+    @delivery_time = nil
+  end
+
+  def deliver!#(now=30)
+    # @delivery_time = now
+    @delivery_time = Time.now + 30 * 60
   end
 
   def vegetarian?
