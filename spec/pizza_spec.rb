@@ -36,6 +36,15 @@ describe Pizza do
       expect(pizza.vegetarian?).to eq(true)
     end
 
+    it 'should add topping to @toppings in Pizza when Pizza.add_topping(topping) is called' do
+      topping = [
+        Topping.new('bell peppers', vegetarian: true)
+      ]
+
+      pizza = Pizza.new
+
+      expect(pizza.add_topping(topping).include).to eq('bell peppers')
+    end
   xit 'mark @delivery_time attribute on Pizza for 30 minutes from now (Time.now + 30*60)' do
       pizza = Pizza.new
 
