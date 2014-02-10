@@ -23,7 +23,19 @@ describe Pizza do
     expect(pizza.toppings.size).to eq(1)
     expect(pizza.toppings.first.name).to eq('cheese')
   end
-end
+
+  it 'return true if all toppings on pizza are vegetarian' do
+      toppings = [
+        Topping.new('mushrooms', vegetarian: true),
+        Topping.new('cheese', vegetarian: true),
+        Topping.new('olives', vegetarian: true),
+      ]
+
+      pizza = Pizza.new(toppings)
+
+      expect(pizza.vegetarian?).to eq(true)
+    end
+  end
 
 describe Topping do
   describe '.initialize' do
