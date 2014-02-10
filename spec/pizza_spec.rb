@@ -35,7 +35,13 @@ describe Pizza do
 
       expect(pizza.vegetarian?).to eq(true)
     end
+
+  it 'mark @delivery_time attribute on Pizza for 30 minutes from now (Time.now + 30*60)' do
+      pizza = Pizza.new
+
+      expect(pizza.deliver!).to eq(Time.now + 30 * 60)
   end
+end
 
 describe Topping do
   describe '.initialize' do
